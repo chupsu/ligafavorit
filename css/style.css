@@ -869,8 +869,8 @@ body {
   align-items: center;
   justify-content: center;
   aspect-ratio: 1/1;
-  width: 50px;
-  height: auto;
+  width: auto;
+  height: var(--height-btn);
   font-size: 22px;
   color: var(--color-accent);
   background-color: var(--color-white);
@@ -1350,6 +1350,20 @@ body {
 
 .welcome {
   position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.welcome__items {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.welcome__item {
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -1367,7 +1381,7 @@ body {
 
 .welcome__body {
   position: relative;
-  padding: 116px 0;
+  padding: 116px 0 calc(158px + var(--height-btn-large));
 }
 
 .welcome__title {
@@ -1384,12 +1398,28 @@ body {
   font-size: var(--text-large);
 }
 
-.welcome__text:not(:last-child) {
-  margin-bottom: 24px;
+.welcome__footer {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 40px;
+}
+
+.welcome__footer .container {
+  width: var(--width-page);
+}
+
+.welcome__actions {
+  display: flex;
 }
 
 .welcome__btn {
   min-width: 260px;
+}
+
+.welcome__controls {
+  padding-top: 20px;
 }
 
 .benefits {
@@ -2969,7 +2999,7 @@ body {
   }
 
   .welcome__body {
-    padding: 210px 0 100px;
+    padding: 210px 0 calc(198px + var(--height-btn-large));
   }
 
   .welcome__title {
@@ -2982,6 +3012,10 @@ body {
 
   .welcome__text {
     max-width: 580px;
+  }
+
+  .welcome__footer {
+    bottom: 60px;
   }
 
   .welcome__btn {
